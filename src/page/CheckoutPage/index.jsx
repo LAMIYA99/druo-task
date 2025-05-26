@@ -10,7 +10,7 @@ import { useCart } from '../../Providers/CardProvider';
 
 const CheckoutPage = () => {
 
-  const { cart } = useCart()
+  const { cart, removeFromCart, clearCart, IncreaseCart, getTotalPrice } = useCart()
 
 
   return (
@@ -55,12 +55,22 @@ const CheckoutPage = () => {
                           <td className="py-4">${item?.newPrice}</td>
                           <td className="py-4">
                             <div className="flex items-center">
-                              <button className="border rounded-md py-2 px-4 mr-2"><Minus /></button>
-                              <span className="text-center w-8">1</span>
-                              <button className="border rounded-md py-2 px-4 ml-2"><Plus /></button>
+                              <button
+                                onClick={() => removeFromCart(item.id)}
+                                className="border rounded-md py-2 px-4 mr-2"><Minus /></button>
+                              <span className="text-center w-8">{item?.quantity}</span>
+                              <button
+                                onClick={() => IncreaseCart(item?.id)}
+                                className="border rounded-md py-2 px-4 ml-2"><Plus /></button>
                             </div>
                           </td>
                           <td className="py-4">$19.99</td>
+                          <td className='flex justify-end mt-10'>
+                            <button
+                              onClick={() => clearCart(item.id)}
+                              className='w-[144px] h-[px45px] rounded-3xl bg-red-600 text-white font-primary text-[13px] p-3.5'>Clear cart</button>
+
+                          </td>
                         </tr>
                       ))}
 
