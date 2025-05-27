@@ -60,7 +60,7 @@ const PopularSection = () => {
                 <ArrowRight className='text-[#e52e06] w-[16px] h-[16px]' />
             </ul>
         </div>
-        <div className='my-10 grid grid-cols-1 md:grid-cols-5 sm:grid-cols-2 lg:grid-cols-3'>
+        <div className='my-10 grid grid-cols-5'>
 
         {
                    productSection&&productSection.map((item,idx)=>(
