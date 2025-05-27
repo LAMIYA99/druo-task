@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 
 
 const ProductSection = () => {
-    const{addToCart, cart, removeFromCart, clearCart, IncreaseCart,getTotalPrice}=useCart();
+    const{addToCart, cart, removeFromCart, clearCart, increaseCart,getTotalPrice}=useCart();
     const productSection = [
         {
             id: 1,
@@ -20,7 +20,7 @@ const ProductSection = () => {
             image: "https://drou-electronics-store.myshopify.com/cdn/shop/products/p2_ea1ad2a2-ba0d-4dd2-b29a-e51fd931583b_large.jpg?v=1674275324",
             hoverImg: "https://drou-electronics-store.myshopify.com/cdn/shop/products/p1_c084b79e-4c5b-4790-a7fe-00b1eb18b040_large.jpg?v=1674275324",
             title: "Droubook space gray",
-            newPrice: 70.00,
+            newPrice: 80.00,
             oldPrice: 85.00
         },
         {
@@ -28,24 +28,24 @@ const ProductSection = () => {
             image: "https://drou-electronics-store.myshopify.com/cdn/shop/products/11_c6c97b67-edac-48bd-8e5c-cf0de5e9e3cb_large.jpg?v=1674275302",
             hoverImg: "https://drou-electronics-store.myshopify.com/cdn/shop/products/p3_0dd10fdb-44b3-415b-b7c3-91896ecb3ee2_large.jpg?v=1674275302",
             title: "Homepod mini 2022",
-            newPrice: 70.00,
-            oldPrice: 85.00
+            newPrice: 39.00,
+            oldPrice: 60.00
         },
         {
             id: 4,
             image: "https://drou-electronics-store.myshopify.com/cdn/shop/products/p10_large.jpg?v=1674275306",
             hoverImg: "https://drou-electronics-store.myshopify.com/cdn/shop/products/p5_020e3c58-9f57-4388-b8d8-bb40db3b4c5e_large.jpg?v=1674275306",
             title: "DroSafe Charger",
-            newPrice: 70.00,
-            oldPrice: 85.00
+            newPrice: 55.00,
+            oldPrice: 75.00
         },
         {
             id: 5,
             image: "https://drou-electronics-store.myshopify.com/cdn/shop/products/p9_large.jpg?v=1674275297",
             hoverImg: "https://drou-electronics-store.myshopify.com/cdn/shop/products/p7_6fe3391a-c2d0-4342-bd4c-70b486ce88ae_large.jpg?v=1674275297",
             title: "Home entertainment",
-            newPrice: 70.00,
-            oldPrice: 85.00
+            newPrice: 79.00,
+            oldPrice: 95.00
         },
 
     ]

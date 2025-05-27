@@ -7,9 +7,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import { CartProvider } from './Providers/CardProvider.jsx';
+import { ClerkProvider } from "@clerk/clerk-react";
+import "./i18n.js";
 
 createRoot(document.getElementById('root')).render(
- <CartProvider>
-  <App/>
- </CartProvider>
+    <ClerkProvider publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}>
+        <CartProvider>
+            <App />
+        </CartProvider>
+    </ClerkProvider>
+
 )

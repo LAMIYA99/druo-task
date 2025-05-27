@@ -24,6 +24,7 @@ const ProductCard = ({ image, hoverImg, title, newPrice, oldPrice, addToCart }) 
                               onClick={addToCart}
                              className='w-11 h-11 bg-[#343a40] rounded-full flex items-center justify-center text-white hover:bg-[#E52E06] transition'>
                                 <ShoppingBag
+                                
                                   
                                     className="w-4 h-4 text-white" />
                             </li>

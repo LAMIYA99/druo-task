@@ -10,12 +10,15 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import { useCart } from '../../Providers/CardProvider';
+import { useUser, UserButton } from '@clerk/clerk-react';
+import { useTranslation } from 'react-i18next';
 
 
 const Header = () => {
   const navigate = useNavigate()
-
-  const { cart} = useCart()
+  const { isSignedIn, isLoaded } = useUser()
+  const { t } = useTranslation()
+  const { cart } = useCart()
   return (
     <header className=''>
       <div className='bg-[#f3f3f3]'>
@@ -79,7 +82,15 @@ const Header = () => {
                     }
                   </span>
                 </a>
-                <a href="#"><UserRound className='w-[30px] h-[30px]' /></a>
+                {
+                  isSignedIn && isLoaded ? (
+                    <UserButton />
+                  ) : <a href="/login"><UserRound
+                    onClick={() => {
+                      navigate("/login")
+                    }}
+                    className='w-[30px] h-[30px]' /></a>
+                }
               </div>
             </div>
           </div>
@@ -97,7 +108,7 @@ const Header = () => {
 
               <div className='flex'>
                 <ul className="flex gap-5 text-[15px] font-primary text-black font-medium">
-                  <li><a href="#" className="relative hover:text-gray-200 flex">Home<ChevronDown className='w-[15px]' />
+                  <li><a href="/" className="relative hover:text-gray-200 flex">Home<ChevronDown className='w-[15px]' />
                     <span className="absolute top-[-18px] right-3 text-[10px] bg-[#e52e06] text-white  w-11 h-[18px] flex items-center rounded-t-full rounded-br-full justify-center">NEW</span>
 
                   </a></li>
